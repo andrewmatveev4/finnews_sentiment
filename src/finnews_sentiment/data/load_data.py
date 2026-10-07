@@ -18,21 +18,6 @@ def load_phrasebank(path: Path) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def basic_cleaning(df: pd.DataFrame) -> pd.DataFrame:
-    """Минимальная очистка данных.
-
-    Здесь можно:
-    - убрать полностью пустые строки
-    - удалить дубликаты
-    - привести названия колонок к единому виду
-    """
-    df = df.copy()
-    df.columns = [c.strip().lower() for c in df.columns]
-    df = df.drop_duplicates()
-    df = df.dropna(subset=["headline", "text"])
-    return df
-
-
 def save_processed(df: pd.DataFrame, path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(path, index=False)

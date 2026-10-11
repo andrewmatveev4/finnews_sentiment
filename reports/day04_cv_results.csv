@@ -1,0 +1,8 @@
+experiment,cv_macro_f1,cv_std
+E6_C3_balanced,0.7211,0.0132
+E1_class_weight,0.7151,0.0182
+E4_linear_svc,0.7062,0.0219
+E5_tuned_C10,0.6971,0.0252
+baseline,0.6522,0.0127
+E3_trigrams,0.6504,0.0112
+E2_token_pattern,0.6459,0.0103

@@ -1,0 +1,83 @@
+                                                                                                                                                                                                                               text      true      pred  confidence  correct
+0                                               Participants at any of the book discussions or other special events , or visitors to the car dealership were eligible to enter the drawing for the 2005 silver , four-door Altima .   neutral   neutral       0.901     True
+1  30 November 2009 - Finnish office furniture maker Martela Oyj HEL : MARAS said today that it will make redundant three people and other nine will be laid off permanently from the company 's office staff and factory workers .  negative  negative       0.930     True
+2                                                                                                                                                                                       The output of the contracts totals 72 MWe .   neutral   neutral       0.825     True
+3                                                                                                                                                            Cision says the sale will return its U.K. operation to profitability .  positive  positive       0.713     True
+4                                                                                                          Okmetic Board of Directors has also decided on a new share ownership program directed to the company 's top management .   neutral   neutral       0.894     True
+
+Ошибок: 223 из 967
+
+Штуки:
+ pred      negative  neutral  positive
+true                                 
+negative        83       25        13
+neutral         23      476        75
+positive        22       65       185
+
+Доли по строке:
+ pred      negative  neutral  positive
+true                                 
+negative     0.686    0.207     0.107
+neutral      0.040    0.829     0.131
+positive     0.081    0.239     0.680
+
+График: reports/figures/confusion_matrix.png
+
+Топ слов по классам:
+         negative        neutral   positive
+0           down             is  increased
+1      decreased  approximately       rose
+2           fell    development   increase
+3          staff             no    up from
+4          lower       includes   positive
+5         result       business       grew
+6        dropped          range         up
+7   decreased to          stake     signed
+8      down from          power    leading
+9       negative       acquired    rose to
+10           lay           will     growth
+11         union      tikkurila    awarded
+12        prices       value of   improved
+13           had            not     strong
+14           off        january       good
+
+=== Правда negative -> модель сказала positive ===
+[0.87] The result will also be burdened by increased fixed costs associated with operations in China , and restructuring costs in Japan .
+[0.79] Export declined by 6 percent to 16.4 million liters .
+[0.70] We have also cut our price projections for paper and packaging , '' an analyst with Goldman Sachs said on a note on Monday .
+[0.63] `` Those uncertainties cloud the long-term outlook . ''
+[0.60] Stora Enso 's target has been cut to EUR 4.85 from EUR 5.55 and Holmen 's target -- to SEK 135 from SEK 150 .
+
+=== Правда positive -> модель сказала negative ===
+[0.83] Cash flow from business operations totalled EUR 0.4 mn compared to a negative EUR 15.5 mn in the first half of 2008 .
+[0.76] As a result , the Russia 's import restrictions on Finnish dairy companies will be canceled on 6 August 2010 .
+[0.73] The company reports a loss for the period of EUR 0.4 mn compared to a loss of EUR 1.9 mn in the corresponding period in 2005 .
+[0.70] Employees are also better prepared to answer calls , since they already have detailed information about the caller before they answer the phone . ''
+[0.59] Loss after taxes amounted to EUR 1.2 mn compared to a loss of 2.6 mn .
+
+=== Правда neutral -> модель сказала positive ===
+[0.95] We are also pleased to welcome the new employees to Tieto . '
+[0.92] `` Of course , we are in talks with all those coming up with new projects that involve material handling , '' Konecranes President and CEO Pekka Lundmark said , when asked whether it was talking to Reliance Industries for supplying equipment to its upcoming refinery in Jamnagar .
+[0.81] `` Management decided at the end of 2005 to increase cathode copper capacity .
+[0.78] The company said shareholders will be able to vote on the agreement at an EGM scheduled for later this month .
+[0.76] Finnish holding company Panostaja Oyj said on June 12 , 2007 it has signed a letter of intent to acquire local Lahden Lampokasittely Oy and Heatmasters Oy , active in the heat treatment of metals , for a total 3.1 mln euro ( $ 4.1 mln ) .
+
+сравнение (compared to/with):
+              текстов  доля ошибок
+с паттерном        27        0.296
+без паттерна      940        0.229
+
+слово loss:
+              текстов  доля ошибок
+с паттерном        27        0.296
+без паттерна      940        0.229
+
+слово cut:
+              текстов  доля ошибок
+с паттерном         7        0.429
+без паттерна      960        0.229
+
+слово negative:
+              текстов  доля ошибок
+с паттерном         4        0.500
+без паттерна      963        0.229

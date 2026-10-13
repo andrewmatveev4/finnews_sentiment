@@ -7,8 +7,6 @@ import pandas as pd
 HTML_TAG = re.compile(r"<[^>]+>")
 SPLIT_NUMBER = re.compile(r"(\d)\s+\.(\d)")
 WHITESPACE = re.compile(r"\s+")
-# грубое приближение тикеров, только для сырого текста (после lower() не работает)
-TICKER_PATTERN = re.compile(r"\b[A-Z]{2,6}\b")
 MIN_WORDS = 3
 LABEL2ID = {"negative": 0, "neutral": 1, "positive": 2}
 ID2LABEL = {i: name for name, i in LABEL2ID.items()}
@@ -36,24 +34,6 @@ def clean_news_data(df: pd.DataFrame, text_col: str = "text") -> pd.DataFrame:
     """
     df = df.copy()
     df["text_clean"] = df[text_col].astype(str).map(preprocess_text)
-    return df
-
-
-def add_basic_features(df: pd.DataFrame, text_col: str = "text_clean") -> pd.DataFrame:
-    """Добавляет простые числовые признаки на основе текста.
-
-    Примеры:
-    - длина текста в словах
-    - количество тикеров
-    - количество чисел в исходном тексте
-    """
-    df = df.copy()
-    df["text_len_words"] = df[text_col].astype(str).str.split().apply(len)
-    df["ticker_count"] = df["text"].astype(str).apply(lambda s: len(TICKER_PATTERN.findall(s)))
-
-    # количество чисел в исходном тексте
-    df["number_count"] = df["text"].astype(str).str.findall(r"\d+(?:\.\d+)?").apply(len)
-
     return df
 
 

@@ -1,0 +1,9 @@
+text,pred_label,confidence,proba_negative,unknown_words,proba_neutral,proba_positive
+Net profit fell 30 % in the third quarter .,negative,0.945,0.945,,0.029,0.026
+The company will hold its annual general meeting on Tuesday .,neutral,0.688,0.092,,0.688,0.219
+Sales rose sharply thanks to strong demand in Asia .,positive,0.973,0.016,sharply,0.011,0.973
+The company reported a loss of EUR 0.4 mn compared to a loss of EUR 1.9 mn a year earlier .,negative,0.558,0.558,,0.014,0.428
+Russia will cancel import restrictions on Finnish dairy products .,neutral,0.436,0.197,"cancel, import, restrictions, dairy",0.436,0.367
+Operating costs increased by 15 % due to higher energy prices .,positive,0.563,0.418,,0.019,0.563
+Shares plummeted after the CEO resigned .,neutral,0.872,0.06,"plummeted, resigned",0.872,0.068
+The board has no plans to cut jobs this year .,negative,0.683,0.683,,0.191,0.126
